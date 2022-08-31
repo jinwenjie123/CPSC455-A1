@@ -1,0 +1,23 @@
+[
+    {
+       "name": "Magikarp",
+       "image": "https://live.staticflickr.com/3715/12909419905_0e7d7ae4de.jpg",
+       "gredient": "Fresh Magikarp and Wasabi",
+       "description": "RAW Magikarp is the key !"
+    },
+
+    {
+       "name": "Farfetch'd",
+       "image": "https://i0.wp.com/thegluttonousgeek.com/wp-content/uploads/2016/09/farfetchdduck1.jpg?resize=559%2C396&ssl=1",
+       "gredient": "Farfetch'd and Green Onion",
+       "description": "Must use the Green Onion carried by Farfetch'd"
+    },
+
+    {
+       "name": "Squirtle",
+       "image": "https://external-preview.redd.it/pLR0kMyTDHluP_0eYgX1lSeN7BomG3xgcAVMZolzPAo.png?width=640&crop=smart&format=pjpg&auto=webp&s=b62c1ef0de17ceb7ddc7027a01c580a6b9165b50",
+       "gredient": "Squirtle and Secret Herbs",
+       "description": "Good for your immune system"
+    }
+
+]

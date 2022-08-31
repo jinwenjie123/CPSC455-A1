@@ -1,0 +1,158 @@
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.list{
+    text-decoration: none;
+    color: #e68a12;
+    font-weight:bold; 
+}
+
+nav {
+    background-color: #404347;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 0.3em;
+}
+
+
+ul,li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+body{
+    background-image: url(https://images.immediate.co.uk/production/volatile/sites/30/2020/08/chorizo-mozarella-gnocchi-bake-cropped-9ab73a3.jpg?quality=90&resize=768,574);             
+}
+
+body#about{
+    background-image: none;
+    background-color: #404347;
+    background-image: url(https://static.wikia.nocookie.net/dark-deception-game/images/2/20/Chef_Monkey_Nightmare.png/revision/latest?cb=20211228073715);
+    background-size: 400px 400px;
+    background-repeat: no-repeat;
+    background-position: top 60px left 30px;
+}
+
+body#creativity{
+    background-image: none;
+    background-color: #404347;
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/229/517/285/background-blood-skull-scratches-wallpaper-thumb.jpg);
+    background-size: 400px 230px;
+    background-position: center;
+    margin-top: 20px;
+}
+
+body#recipes{
+    background-image: none;
+    background-color: #404347;
+}
+
+
+@media (max-width: 600px){
+    nav, nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    body#no-background{
+        background-position: top 180px left 30px;
+    }
+
+    .panel .list_cards{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.panel {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    text-transform: uppercase;
+    width: 90%;
+  }
+
+.list_cards{
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+
+  .recipe-card{
+    background-color: #696969;
+    border-radius: 10px;
+    padding: 15px 25px;
+    width: 100%;
+    max-width: 530px;
+    margin-right: 1em;
+    color: #013d13;
+  }
+  .recipe-card:last-child {
+    margin-right: none;
+  }
+
+  .recipe-image{
+    width: 400px;
+    height: 260px;
+    border-radius: 10px;
+  }
+
+.recipe-header{
+    font-weight: 900;
+    font-size: 27px;
+}
+
+#recipe-button{
+    border-radius: 10px;
+    background-color: black;
+    color: #e68a12;
+    margin-top: 1em;
+    height: 30px;
+    width: 70px;
+}
+
+#recipe-button:hover{
+    background-color: #013d13;
+}
+
+.hide {
+    display: none;
+}
+
+#form-submit{
+    background-color: rebeccapurple;
+    height: 25px;
+    border-radius: 20%;
+}
+
+#form-submit:hover{
+    background-color: red;
+    color: #013d13;
+    font-weight: 300;
+    height: 30px;
+    width: 30px;
+    border-radius: 30%;
+}
+
+#form{
+    margin-top: 2em;
+}

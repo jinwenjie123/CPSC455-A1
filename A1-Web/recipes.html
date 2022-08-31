@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yummly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body id="recipes">
+    <nav>
+        <ul class = "nav">
+            <li><a href="home.html" class = "list">Home</a></li>
+            <li><a href="recipes.html" class = "list">Recipes</a></li>
+            <li><a href="creativity.html" class = "list">Grab</a></li>
+            <li><a href="about.html" class = "list">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="panel" id ="panel_recipes">
+        <div class = "list_cards">
+        <script>
+            const meJson = `
+            [
+                {
+                    "name": "Magikarp",
+                    "image": "https://live.staticflickr.com/3715/12909419905_0e7d7ae4de.jpg",
+                    "gredient": "Fresh Magikarp and Wasabi. ",
+                    "description": "RAW Magikarp is the key !"
+                },
+
+                {
+                    "name": "Farfetch'd",
+                    "image": "https://i0.wp.com/thegluttonousgeek.com/wp-content/uploads/2016/09/farfetchdduck1.jpg?resize=559%2C396&ssl=1",
+                    "gredient": "Farfetch'd and Green Onion. ",
+                    "description": "Must use the Green Onion carried by Farfetch'd"
+                },
+
+                {
+                    "name": "Squirtle",
+                    "image": "https://external-preview.redd.it/pLR0kMyTDHluP_0eYgX1lSeN7BomG3xgcAVMZolzPAo.png?width=640&crop=smart&format=pjpg&auto=webp&s=b62c1ef0de17ceb7ddc7027a01c580a6b9165b50",
+                    "gredient": "Squirtle and Secret Herbs. ",
+                    "description": "Good for your immune system"
+                }
+
+            ]
+            `;
+
+            const dishes = JSON.parse(meJson);
+            let panel = document.querySelector(".list_cards");
+            //let panel = document.querySelector(".panel");
+            for(let i = 0; i < dishes.length; i++){
+                //let frame = document.createElement("li");
+                let frame = document.createElement("div");
+                frame.classList.add("recipe-card");
+
+                let img = document.createElement("img");
+                img.src = `${dishes[i].image}`;
+                img.classList.add("recipe-image");
+                frame.appendChild(img);
+
+                let title = document.createElement("h3");
+                title.classList.add("recipe-header");
+                let title_text = document.createTextNode(dishes[i].name);
+                title.appendChild(title_text);
+                frame.appendChild(title);
+
+                let gredient = document.createElement("div");
+                gredient.classList.add("recipe-gredient");
+                let gredient_content = document.createTextNode(dishes[i].gredient);
+                gredient.appendChild(gredient_content);
+                frame.appendChild(gredient);
+
+                let description = document.createElement("div");
+                description.classList.add("recipe-description");
+                let description_content = document.createTextNode(dishes[i].description);
+                gredient.appendChild(description_content);
+                frame.appendChild(description);
+
+                panel.appendChild(frame);
+            }
+
+            function handleNavClick(obj) {
+				let p = document.querySelectorAll(".panel div");
+                for(let i = 0; i < p.length; i += 3){
+                    p[i].classList.add("hide");
+                }
+                let newImage = document.createElement("img");
+                newImage.src = "http://images.squarespace-cdn.com/content/v1/56995777d82d5e518d1bd530/1472847730929-NMTGC3KG37JV9BGKDME7/die+logo+on+black.jpg?format=1500w";
+                let newP = document.querySelector(".panel");
+                newP.appendChild(newImage);
+			}
+            
+        </script>
+
+        </div>
+    </div>
+
+    <div>
+        <form id="form">
+            <input type="text" id="form-name" placeholder="Name" required>
+            <input type="text" id="form-image" placeholder="image's URL" required>
+            <input type="text" id="form-gredient" placeholder="gredient" required>
+            <input type="text" id="form-description" placeholder="description" required>
+            <input type="submit" id = "form-submit" value = "NOW!">
+        </form>
+
+        <script>
+
+let form = document.getElementById("form");
+form.addEventListener('submit', function(event){
+    event.preventDefault();
+    let form_name = document.getElementById("form-name").value;
+    let form_image = document.getElementById("form-image").value;
+    let form_gredient = document.getElementById("form-gredient").value;
+    let form_description = document.getElementById("form-description").value;
+
+    let f = document.createElement("div");
+    f.classList.add("recipe-card");
+
+    let img = document.createElement("img");
+    img.src = `${form_image}`;
+    img.classList.add("recipe-image");
+    f.appendChild(img);
+
+    let title = document.createElement("h3");
+    title.classList.add("recipe-header"); 
+    let title_text = document.createTextNode(form_name);
+    title.appendChild(title_text);
+    f.appendChild(title);
+
+    let gredient = document.createElement("div");
+    gredient.classList.add("recipe-gredient");
+    let gredient_content = document.createTextNode(form_gredient);
+    gredient.appendChild(gredient_content);
+    f.appendChild(gredient);
+
+
+    let description = document.createElement("div");
+    description.classList.add("recipe-description");
+    let description_content = document.createTextNode(form_description);
+    gredient.appendChild(description_content);
+    f.appendChild(description);
+
+    console.log(f);
+
+    panel_recipes.appendChild(f);
+});
+        </script>
+    </div>
+
+    <button id = "recipe-button" onClick="handleNavClick(this)">Dare U!</button>
+    <script src="app.js"></script>
+</body>
+
+</html>
